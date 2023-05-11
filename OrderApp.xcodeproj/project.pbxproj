@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E4AA8652A0BE1E900FABF5F /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4AA8642A0BE1E900FABF5F /* OrderConfirmationViewController.swift */; };
+		7E4AA8672A0BF20800FABF5F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4AA8662A0BF20800FABF5F /* MenuItemCell.swift */; };
 		7EB6215829F6C12800B91B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6215729F6C12800B91B70 /* AppDelegate.swift */; };
 		7EB6215A29F6C12800B91B70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6215929F6C12800B91B70 /* SceneDelegate.swift */; };
 		7EB6215C29F6C12800B91B70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB6215B29F6C12800B91B70 /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E4AA8642A0BE1E900FABF5F /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		7E4AA8662A0BF20800FABF5F /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		7EB6215429F6C12800B91B70 /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB6215729F6C12800B91B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EB6215929F6C12800B91B70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,13 +97,6 @@
 		7EB6214B29F6C12800B91B70 = {
 			isa = PBXGroup;
 			children = (
-				7EDD87CA29FAD9A60028DAE0 /* ResponseModels.swift */,
-				7EDD881329FC8F9E0028DAE0 /* MenuController.swift */,
-				7EDD87C829FAD9200028DAE0 /* MenuItem.swift */,
-				7EDD87C629FAD8E80028DAE0 /* MenuItemDetailViewController.swift */,
-				7EDD87C429FAD7280028DAE0 /* OrderTableViewController.swift */,
-				7EDD87C229FAD7130028DAE0 /* MenuTableViewController.swift */,
-				7EDD87C029FAD6F50028DAE0 /* CategoryTableViewController.swift */,
 				7EB6215629F6C12800B91B70 /* OrderApp */,
 				7EB6216D29F6C12A00B91B70 /* OrderAppTests */,
 				7EB6217729F6C12A00B91B70 /* OrderAppUITests */,
@@ -123,6 +120,15 @@
 				7EB6215729F6C12800B91B70 /* AppDelegate.swift */,
 				7EB6215929F6C12800B91B70 /* SceneDelegate.swift */,
 				7EB6215B29F6C12800B91B70 /* ViewController.swift */,
+				7E4AA8642A0BE1E900FABF5F /* OrderConfirmationViewController.swift */,
+				7EDD87CA29FAD9A60028DAE0 /* ResponseModels.swift */,
+				7EDD881329FC8F9E0028DAE0 /* MenuController.swift */,
+				7EDD87C829FAD9200028DAE0 /* MenuItem.swift */,
+				7EDD87C629FAD8E80028DAE0 /* MenuItemDetailViewController.swift */,
+				7EDD87C429FAD7280028DAE0 /* OrderTableViewController.swift */,
+				7EDD87C229FAD7130028DAE0 /* MenuTableViewController.swift */,
+				7E4AA8662A0BF20800FABF5F /* MenuItemCell.swift */,
+				7EDD87C029FAD6F50028DAE0 /* CategoryTableViewController.swift */,
 				7EB6215D29F6C12800B91B70 /* Main.storyboard */,
 				7EB6216029F6C12A00B91B70 /* Assets.xcassets */,
 				7EB6216229F6C12A00B91B70 /* LaunchScreen.storyboard */,
@@ -288,6 +294,8 @@
 				7EDD87CB29FAD9A60028DAE0 /* ResponseModels.swift in Sources */,
 				7EDD87C929FAD9200028DAE0 /* MenuItem.swift in Sources */,
 				7EDD87C529FAD7280028DAE0 /* OrderTableViewController.swift in Sources */,
+				7E4AA8672A0BF20800FABF5F /* MenuItemCell.swift in Sources */,
+				7E4AA8652A0BE1E900FABF5F /* OrderConfirmationViewController.swift in Sources */,
 				7EDD87C129FAD6F50028DAE0 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

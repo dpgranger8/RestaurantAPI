@@ -6,14 +6,22 @@
 //
 
 import Foundation
+import UIKit
 
 class MenuController {
+    static let orderUpdatedNotification = Notification.Name("MenuController.orderUpdated")
+    static let shared = MenuController()
+    var order = Order() {
+        didSet {
+            NotificationCenter.default.post(name: MenuController.orderUpdatedNotification, object: nil)
+        }
+    }
     let baseURL = URL(string: "http://localhost:8080/")!
     typealias MinutesToPrepare = Int
     
     
     func fetchCategories() async throws -> [String] {
-        let categoriesURL = baseURL.appendingPathComponent("categories")
+        let categoriesURL = baseURL.appending(path: "categories")
         
         let (data, response) = try await URLSession.shared.data(from: categoriesURL)
         guard let httpResponse = response as? HTTPURLResponse,
@@ -29,7 +37,7 @@ class MenuController {
     }
     
     func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {
-        let orderURL = baseURL.appendingPathComponent("order")
+        let orderURL = baseURL.appending(path: "order")
         var request = URLRequest(url: orderURL)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField:
@@ -54,7 +62,7 @@ class MenuController {
     }
     
     func fetchMenuItems(forCategory categoryName: String) async throws -> [MenuItem] {
-        let initialMenuURL = baseURL.appendingPathComponent("menu")
+        let initialMenuURL = baseURL.appending(path: "menu")
         var components = URLComponents(url: initialMenuURL, resolvingAgainstBaseURL: true)!
         components.queryItems = [URLQueryItem(name: "category", value: categoryName)]
         let menuURL = components.url!
@@ -75,5 +83,21 @@ class MenuController {
         case categoriesNotFound
         case menuItemsNotFound
         case orderRequestFailed
+        case imageDataMissing
+    }
+    
+    func fetchImage(from url: URL) async throws -> UIImage {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+           httpResponse.statusCode == 200 else {
+            throw MenuControllerError.imageDataMissing
+        }
+        
+        guard let image = UIImage(data: data) else {
+            throw MenuControllerError.imageDataMissing
+        }
+        
+        return image
     }
 }

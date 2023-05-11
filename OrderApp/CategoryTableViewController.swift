@@ -9,7 +9,6 @@ import UIKit
 
 @MainActor
 class CategoryTableViewController: UITableViewController {
-    let menuController = MenuController()
     var categories = [String]()
 
     override func viewDidLoad() {
@@ -18,14 +17,23 @@ class CategoryTableViewController: UITableViewController {
         Task.init {
             do {
                 let categories = try await
-                menuController.fetchCategories()
+                MenuController.shared.fetchCategories()
                 updateUI(with: categories)
             } catch {
                 displayError(error, title: "Failed to Fetch Categories")
             }
         }
     }
-
+    
+    @IBSegueAction func showMenu(_ coder: NSCoder, sender: Any?) -> MenuTableViewController? {
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+            return nil
+        }
+        
+        let category = categories[indexPath.row]
+        return MenuTableViewController(coder: coder, category: category)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
